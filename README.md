@@ -1,6 +1,5 @@
 # Setting up the project
 ## I - Clone this repo
-
 ```
 git clone https://github.com/dheerajck/Django-Auth0.git
 ```
@@ -11,19 +10,21 @@ python -m venv venv
 ```
 
 ## III - Activate the virtual environment and install the project requirements:
-
 ```
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ## IV - Create a new .env file on the root directory based on .env.example and update the variables in the .env file
+```
+cp .env.example .env
+```
+**Read this to get an idea about creating an auth0 app and generating credentials** https://auth0.com/docs/quickstart/webapp/django/interactive
 
 ## V -  Perform the Django database migrations:
 ```
 python manage.py migrate
 ```
-
 
 ## VI - Start the Django development server:
 ```
