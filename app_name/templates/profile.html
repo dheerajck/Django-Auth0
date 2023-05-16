@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock title %}
+{% block body %}
+    <h1>Hey there, you are logged in!</h1>
+
+    <p>uid: {{ uid }}</p>
+    <p>user_id: {{ user_id }}</p>
+    <p>user: {{ user }}</p>
+    <img src="{{ picture }}" alt="">
+{% endblock body %}
