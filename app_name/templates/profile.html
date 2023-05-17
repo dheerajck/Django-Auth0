@@ -8,4 +8,9 @@
     <p>user_id: {{ user_id }}</p>
     <p>user: {{ user }}</p>
     <img src="{{ picture }}" alt="">
+
+    <p>email: {{ request.user.email }}</p>
+    <p>name: {{ request.user.get_full_name }}</p>
+    <p>username: {{ request.user.username }}</p>
+
 {% endblock body %}

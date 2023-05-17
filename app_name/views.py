@@ -18,16 +18,22 @@ def index(request):
 @login_required
 def profile(request):
     user = request.user
-    auth0_user = user.social_auth.get(provider='auth0')
 
+    auth0_user = user.social_auth.get(provider='auth0')
     # print(request.user.social_auth.values_list('provider'))
+
+    # print(dir(user))
     # print(dir(auth0_user))
+
     context = {
         'uid': auth0_user.uid,
         'user_id': auth0_user.user_id,
         'user': auth0_user.user,
         'picture': auth0_user.extra_data['picture'],
     }
+
+    # request.user.save()
+    # auth0_user.save()
 
     return render(request, 'profile.html', context=context)
 
