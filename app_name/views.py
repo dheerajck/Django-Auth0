@@ -41,11 +41,6 @@ def profile(request):
 def logout_view(request):
     django_logout(request)
 
-    # from django.http import HttpResponseRedirect
-    # return_to = urlencode({"returnTo": request.build_absolute_uri("/")})
-    # logout_url = f"https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?client_id={settings.SOCIAL_AUTH_AUTH0_KEY}&{return_to}"
-    # return HttpResponseRedirect(logout_url)
-
     return redirect(
         f"https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?"
         + urlencode(
