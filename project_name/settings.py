@@ -157,3 +157,6 @@ MIDDLEWARE += [
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
+
+
+AUTH_USER_MODEL = 'app_name.CustomUser'

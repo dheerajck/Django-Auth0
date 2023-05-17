@@ -19,7 +19,9 @@ def index(request):
 def profile(request):
     user = request.user
 
-    auth0_user = user.social_auth.get(provider='auth0')
+    # auth0_user = user.social_auth.get(provider='auth0') throws error when user has logged in with email and password and then with social login
+    # as this query would return 2 values instead of one, we would need to use custom database instead of auth0 database to avoid creating multiple entries for the same email
+    auth0_user = user.social_auth.filter(provider='auth0').first()
     # print(request.user.social_auth.values_list('provider'))
 
     # print(dir(user))
