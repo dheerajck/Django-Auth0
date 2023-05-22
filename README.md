@@ -15,18 +15,23 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## IV - Create a new .env file on the root directory based on .env.example and update the variables in the .env file
+## IV - Create a new auth0 application
+Create an auth0 Regular Web Application and configure Application URIs,
+for running in localhost use the below Application URIs<br>
+Allowed  Callback URLs: `http://127.0.0.1:8000/complete/auth0/, http://localhost:8000/complete/auth0/`<br>
+Allowed Logout URLs:`http://127.0.0.1:8000/, http://localhost:8000/`
+
+## V - Create a new .env file on the root directory based on .env.example and update the variables in the .env file
 ```
 cp .env.example .env
 ```
-**Read this to get an idea about creating an auth0 app and generating credentials** https://auth0.com/docs/quickstart/webapp/django/interactive
 
-## V -  Perform the Django database migrations:
+## VI -  Perform the Django database migrations:
 ```
 python manage.py migrate
 ```
 
-## VI - Start the Django development server:
+## VII - Start the Django development server:
 ```
 python manage.py runserver
 ```
